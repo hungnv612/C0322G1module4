@@ -4,9 +4,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
+
 @Repository
-public class DictionaryRepository implements IDictionaryRepository{
-   private static Map<String, String> dictionary = new HashMap<>();
+public class DictionaryRepository implements IDictionaryRepository {
+    private static Map<String, String> dictionary = new HashMap<>();
 
     static {
 
@@ -18,10 +19,10 @@ public class DictionaryRepository implements IDictionaryRepository{
     }
 
     @Override
-    public String Dictionary(String s) {
+    public String dictionary(String s) {
         String result = dictionary.get(s);
         String resultSet;
-        if(result != null){
+        if (result != null) {
             resultSet = result;
         } else {
             resultSet = "Not found";

@@ -1,6 +1,5 @@
 package currency_exchange.controller;
 
-import currency_exchange.repository.ICurrencyRepository;
 import currency_exchange.service.ICurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,14 +14,14 @@ public class CurrencyController {
     @Autowired
     private ICurrencyService iCurrencyService;
 
-        @GetMapping
-        public String view(){
-            return "list";
-        }
+    @GetMapping
+    public String view() {
+        return "list";
+    }
 
-    @PostMapping ("/currency")
+    @PostMapping("/currency")
     public ModelAndView currency(@RequestParam float rate, float usd, Model model) {
-        ModelAndView modelAndView = new ModelAndView("list","vnd", iCurrencyService.Currency(rate,usd));
+        ModelAndView modelAndView = new ModelAndView("list", "vnd", iCurrencyService.currency(rate, usd));
         return modelAndView;
     }
 

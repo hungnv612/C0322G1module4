@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DictionaryService implements IDictionaryService{
+public class DictionaryService implements IDictionaryService {
     @Autowired
     private IDictionaryRepository iDictionaryRepository;
 
 
     @Override
-    public String Dictionary(String s) {
-        return iDictionaryRepository.Dictionary(s);
+    public String dictionary(String s) {
+        return iDictionaryRepository.dictionary(s);
     }
 }
