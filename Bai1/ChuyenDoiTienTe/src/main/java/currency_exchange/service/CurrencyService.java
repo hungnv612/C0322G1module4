@@ -11,6 +11,6 @@ public class CurrencyService implements ICurrencyService {
 
     @Override
     public float currency(float rate, float usd) {
-        return iCurrencyRepository.Currency(rate, usd);
+        return iCurrencyRepository.currency(rate, usd);
     }
 }
