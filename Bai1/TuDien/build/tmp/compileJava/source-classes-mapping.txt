@@ -1,0 +1,10 @@
+dictionary/service/IDictionaryService.java
+ dictionary.service.IDictionaryService
+dictionary/service/DictionaryService.java
+ dictionary.service.DictionaryService
+dictionary/controller/DictionaryController.java
+ dictionary.controller.DictionaryController
+dictionary/repository/DictionaryRepository.java
+ dictionary.repository.DictionaryRepository
+dictionary/repository/IDictionaryRepository.java
+ dictionary.repository.IDictionaryRepository
