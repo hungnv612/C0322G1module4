@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.model.Student;
 import vn.codegym.service.IStudentService;
@@ -18,9 +19,20 @@ import java.util.List;
 @Controller
 public class StudentController {
 
+//    @GetMapping
+//    public String getIndex() {
+//        return "list";
+//    }
     @Autowired
     @Qualifier("studentServiceImpl")
     private IStudentService studentService;
+
+//    @PostMapping("/sandwich")
+//    public String postIndex(@RequestParam(defaultValue = "") String[] condiment, Model model) {
+//        String mess = iSandwichServive.returnChose(condiment);
+//        model.addAttribute("mess", mess);
+//        return "list";
+//    }
 
     @GetMapping("")
     public String showStudentList(Model model, ModelMap modelMap){

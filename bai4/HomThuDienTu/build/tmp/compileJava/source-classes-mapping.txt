@@ -1,0 +1,14 @@
+mainFile/service/MailboxService.java
+ mainFile.service.MailboxService
+mainFile/repository/MailboxRepository.java
+ mainFile.repository.MailboxRepository
+mainFile/config/CharsetFilter.java
+ mainFile.config.CharsetFilter
+mainFile/model/Mailbox.java
+ mainFile.model.Mailbox
+mainFile/service/IMailboxService.java
+ mainFile.service.IMailboxService
+mainFile/controller/MailboxController.java
+ mainFile.controller.MailboxController
+mainFile/repository/IMailboxRepository.java
+ mainFile.repository.IMailboxRepository
