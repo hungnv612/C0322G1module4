@@ -1,14 +1,30 @@
-mainFile/service/MailboxService.java
- mainFile.service.MailboxService
-mainFile/repository/MailboxRepository.java
- mainFile.repository.MailboxRepository
 mainFile/config/CharsetFilter.java
  mainFile.config.CharsetFilter
-mainFile/model/Mailbox.java
- mainFile.model.Mailbox
-mainFile/service/IMailboxService.java
- mainFile.service.IMailboxService
-mainFile/controller/MailboxController.java
- mainFile.controller.MailboxController
-mainFile/repository/IMailboxRepository.java
- mainFile.repository.IMailboxRepository
+mainFile/repository/LanguageRepository.java
+ mainFile.repository.LanguageRepository
+mainFile/model/Email.java
+ mainFile.model.Email
+mainFile/service/EmailService.java
+ mainFile.service.EmailService
+mainFile/repository/EmailRepositoryImpl.java
+ mainFile.repository.EmailRepositoryImpl
+mainFile/service/EmailServiceImpl.java
+ mainFile.service.EmailServiceImpl
+mainFile/repository/PageSizeRepositoryImpl.java
+ mainFile.repository.PageSizeRepositoryImpl
+mainFile/repository/PageSizeRepository.java
+ mainFile.repository.PageSizeRepository
+mainFile/service/LanguageServiceImpl.java
+ mainFile.service.LanguageServiceImpl
+mainFile/repository/EmailRepository.java
+ mainFile.repository.EmailRepository
+mainFile/repository/LanguageRepositoryImpl.java
+ mainFile.repository.LanguageRepositoryImpl
+mainFile/service/PageSizeServiceImpl.java
+ mainFile.service.PageSizeServiceImpl
+mainFile/service/PageSizeService.java
+ mainFile.service.PageSizeService
+mainFile/service/LanguageService.java
+ mainFile.service.LanguageService
+mainFile/controller/EmailController.java
+ mainFile.controller.EmailController
