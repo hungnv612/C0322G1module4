@@ -12,10 +12,10 @@ public class EmailRepositoryImpl implements EmailRepository {
 
     static {
         emailList = new ArrayList<>();
-        emailList.add(new Email(1, "English", 5, true, "Le Nam"));
-        emailList.add(new Email(2, "Chinese", 100, false, "Le Hung"));
-        emailList.add(new Email(3, "Japanese", 25, false, "Le Long"));
-        emailList.add(new Email(4, "Vietnamese", 15, true, "Le Quy"));
+        emailList.add(new Email(1, "English", 5, true, "Hai"));
+        emailList.add(new Email(2, "Chinese", 100, false, "Hung"));
+        emailList.add(new Email(3, "Japanese", 25, false, "Duc"));
+        emailList.add(new Email(4, "Vietnamese", 15, true, "Thang"));
     }
 
     @Override
