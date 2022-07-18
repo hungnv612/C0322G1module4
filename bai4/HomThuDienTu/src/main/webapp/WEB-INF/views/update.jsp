@@ -19,42 +19,42 @@
 </head>
 <body>
 <h2>Settings</h2>
-<form:form method="post" modelAttribute="email" action="/update">
-    <form:hidden path="id"/>
-    <table>
-        <tr>
-            <th>Languages</th>
-            <td>
-                <form:select path="language" items="${languageArr}"/>
-            </td>
-        </tr>
-        <tr>
-            <th>Page size:</th>
-            <td>Show
-                <form:select path="pageSize" items="${pageSizeArr}"/>
-                emails per page
-            </td>
-        </tr>
-        <tr>
-            <th>Spam filter:</th>
-            <td>
-                <form:checkbox path="spamFilter"/> Enable spams filter
-            </td>
-        </tr>
-        <tr>
-            <th>Signature:</th>
-            <td>
-                <form:textarea path="signature"/>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <form:button>Update</form:button>
-            </td>
-        </tr>
-    </table>
+    <form:form method="post" modelAttribute="email" action="/update">
+        <form:hidden path="id"/>
+        <table id="tables" class="table table-striped table-bordered" style="width:100%">
+            <tr>
+                <th>Languages</th>
+                <td>
+                    <form:select path="language" items="${languageArr}"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Page size:</th>
+                <td>Show
+                    <form:select path="pageSize" items="${pageSizeArr}"/>
+                    emails per page
+                </td>
+            </tr>
+            <tr>
+                <th>Spam filter:</th>
+                <td>
+                    <form:checkbox path="spamFilter"/> Enable spams filter
+                </td>
+            </tr>
+            <tr>
+                <th>Signature:</th>
+                <td>
+                        <form:textarea path="signature"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <form:button>Update</form:button>
+                </td>
+            </tr>
+        </table>
 
-</form:form>
+    </form:form>
 </body>
 </html>

@@ -6,8 +6,8 @@ mainFile/model/Email.java
  mainFile.model.Email
 mainFile/service/EmailService.java
  mainFile.service.EmailService
-mainFile/repository/EmailRepositoryImpl.java
- mainFile.repository.EmailRepositoryImpl
+mainFile/controller/EmailController.java
+ mainFile.controller.EmailController
 mainFile/service/EmailServiceImpl.java
  mainFile.service.EmailServiceImpl
 mainFile/repository/PageSizeRepositoryImpl.java
@@ -26,5 +26,5 @@ mainFile/service/PageSizeService.java
  mainFile.service.PageSizeService
 mainFile/service/LanguageService.java
  mainFile.service.LanguageService
-mainFile/controller/EmailController.java
- mainFile.controller.EmailController
+mainFile/repository/EmailRepositoryImpl.java
+ mainFile.repository.EmailRepositoryImpl

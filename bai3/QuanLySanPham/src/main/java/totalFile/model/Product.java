@@ -1,16 +1,16 @@
 package totalFile.model;
 
 public class Product {
-        private String id;
+        private Integer id;
         private String name;
-        private double price;
+        private Double price;
         private String producer;
         private String description;
 
     public Product() {
     }
 
-    public Product(String id, String name, double price, String producer, String description) {
+    public Product(int id, String name, double price, String producer, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -18,11 +18,11 @@ public class Product {
         this.description = description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

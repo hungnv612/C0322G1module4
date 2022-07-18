@@ -8,7 +8,7 @@ import totalFile.repository.IProductRepository;
 import java.util.List;
 
 @Service
-public class ProductService implements IProductService{
+public class ProductService implements IProductService {
 
     @Autowired
     private IProductRepository iProductRepository;
@@ -20,22 +20,29 @@ public class ProductService implements IProductService{
 
     @Override
     public void save(Product product) {
-
+        int max = 0;
+        for (Product iteam : iProductRepository.findAll()) {
+            if (iteam.getId() > max) {
+                max = iteam.getId();
+            }
+        }
+        product.setId(max + 1);
+        iProductRepository.save(product);
     }
 
     @Override
-    public Product findById(String id) {
-        return null;
+    public Product findById(int id) {
+        return iProductRepository.findById(id);
     }
 
     @Override
-    public void update(String id, Product product) {
-
+    public void update(int id, Product product) {
+        iProductRepository.update(id, product);
     }
 
     @Override
-    public void remove(String id) {
-
+    public void remove(int id) {
+        iProductRepository.remove(id);
     }
 
     @Override
