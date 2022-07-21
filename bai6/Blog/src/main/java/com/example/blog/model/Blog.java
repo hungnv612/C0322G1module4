@@ -12,7 +12,7 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String nameBlog;
     private String content;
 
     public Blog() {
@@ -20,7 +20,7 @@ public class Blog {
 
     public Blog(int id, String name, String content) {
         this.id = id;
-        this.name = name;
+        this.nameBlog = name;
         this.content = content;
     }
 
@@ -32,12 +32,12 @@ public class Blog {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameBlog() {
+        return nameBlog;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameBlog(String nameBlog) {
+        this.nameBlog = nameBlog;
     }
 
     public String getContent() {
