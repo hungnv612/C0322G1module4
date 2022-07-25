@@ -14,7 +14,7 @@
 <div th:if="${mess}">
     <span style="color: red" th:text="${mess}"></span>
 </div>
-<a th:href="@{category}"> List Category</a>
+<a th:href="@{category}"> List Category</a><br>
 <a th:href="@{create}">create</a>
 <table class="table">
     <thead>
@@ -32,7 +32,7 @@
         <td th:text="${row.id}"></td>
         <td th:text="${row.nameBlog}"></td>
         <td th:text="${row.content}"></td>
-        <td th:text="${row.category}"></td>
+        <td th:text="${row.category.getName()}"></td>
         <td>
             <a th:href="@{/edit/(id = ${row.id})}"><button class="btn btn-primary" type="button">Edit</button></a>
         </td>
