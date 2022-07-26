@@ -21,7 +21,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Optional<Customer> findById(Integer id) {
-        return Optional.empty();
+        return iCustomerRepository.findById(id);
     }
 
     @Override
@@ -30,18 +30,18 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void save(Customer blog) {
-
+    public void save(Customer customer) {
+        iCustomerRepository.save(customer);
     }
 
     @Override
-    public void update(Customer blog) {
-
+    public void update(Customer customer) {
+        iCustomerRepository.save(customer);
     }
 
     @Override
     public List<Customer> findByName(String name) {
-        return null;
+        return iCustomerRepository.findByCustomerNameContaining(name);
     }
 
 

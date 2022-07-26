@@ -40,10 +40,6 @@ public class ProductController {
     @PostMapping("/create")
     public String createProduct(@Validated @ModelAttribute("product") ProductDto productDto,
                                 BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-//        iProductService.create(product);
-//        redirectAttributes.addFlashAttribute("mess","Create success");
-//        return "redirect:/product";
-
         if (bindingResult.hasErrors()) {
             return "create";
         } else {
@@ -64,19 +60,14 @@ public class ProductController {
 
     @PostMapping("/update")
     public String editProduct(@Validated @ModelAttribute("product") ProductDto productDto,
-                              BindingResult bindingResult, RedirectAttributes redirectAttributes){
-
-//        iProductService.edit(product);
-//        redirectAttributes.addFlashAttribute("mess", "Update success");
-//        return "redirect:/product";
-
-        if(bindingResult.hasErrors()){
+                              BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
             return "/edit";
         } else {
             Product product = new Product();
-            BeanUtils.copyProperties(productDto,product);
+            BeanUtils.copyProperties(productDto, product);
             iProductService.edit(product);
-            redirectAttributes.addFlashAttribute("mess","Update success");
+            redirectAttributes.addFlashAttribute("mess", "Update success");
             return "redirect:/product";
         }
     }

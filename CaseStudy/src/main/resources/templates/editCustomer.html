@@ -147,8 +147,14 @@
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
         <h1>Create Music</h1>
-        <form th:object="${customer}" method="post">
+        <form th:action="@{/edit}" th:object="${customer}" method="post">
             <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>
+                        <input readonly type="text" th:field="*{customerId}"/>
+                    </th>
+                </tr>
                 <tr>
                     <th>customerType</th>
                     <th>
@@ -167,7 +173,7 @@
                 <tr>
                     <th>dayOfBirth</th>
                     <th>
-                        <input type="date" th:field="*{dayOfBirth}"/>
+                        <input type="text" th:field="*{dayOfBirth}"/>
                     </th>
                 </tr>
                 <tr>
@@ -206,13 +212,13 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button type="submit">Create</button>
+                        <button type="submit">Update</button>
                     </td>
                 </tr>
 
             </table>
         </form>
-        <a th:href="@{listCustomer}">back</a>
+        <a th:href="@{/listCustomer}">back</a>
     </div>
     <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
     <div class="footer container-fluid">
