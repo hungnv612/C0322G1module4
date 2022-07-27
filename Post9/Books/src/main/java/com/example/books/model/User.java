@@ -9,8 +9,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
 
-    @OneToMany(mappedBy = "idBook", cascade = CascadeType.ALL)
-    private Set<Book> books;
+    @ManyToOne
+    @JoinColumn(name ="idBook",referencedColumnName = "idBook")
+    private Book idBook;
 
     private String nameUser;
     private int codeUser;
@@ -18,9 +19,9 @@ public class User {
     public User() {
     }
 
-    public User(int idUser, Set<Book> books, String nameUser, int codeUser) {
+    public User(int idUser, Book idBook, String nameUser, int codeUser) {
         this.idUser = idUser;
-        this.books = books;
+        this.idBook = idBook;
         this.nameUser = nameUser;
         this.codeUser = codeUser;
     }
@@ -33,12 +34,12 @@ public class User {
         this.idUser = idUser;
     }
 
-    public Set<Book> getBooks() {
-        return books;
+    public Book getIdBook() {
+        return idBook;
     }
 
-    public void setBooks(Set<Book> books) {
-        this.books = books;
+    public void setIdBook(Book idBook) {
+        this.idBook = idBook;
     }
 
     public String getNameUser() {

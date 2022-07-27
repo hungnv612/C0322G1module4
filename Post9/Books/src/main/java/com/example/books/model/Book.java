@@ -2,6 +2,7 @@ package com.example.books.model;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -9,9 +10,9 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBook;
 
-    @ManyToOne
-    @JoinColumn(name ="idUser",referencedColumnName = "idUser")
-    private User idUser;
+
+    @OneToMany(mappedBy = "idBook", cascade = CascadeType.ALL)
+    private Set<User> idUser;
 
     private String nameBook;
     private int amount;
@@ -19,7 +20,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(int idBook, User idUser, String nameBook, int amount) {
+    public Book(int idBook, Set<User> idUser, String nameBook, int amount) {
         this.idBook = idBook;
         this.idUser = idUser;
         this.nameBook = nameBook;
@@ -34,11 +35,11 @@ public class Book {
         this.idBook = idBook;
     }
 
-    public User getIdUser() {
+    public Set<User> getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(User idUser) {
+    public void setIdUser(Set<User> idUser) {
         this.idUser = idUser;
     }
 
