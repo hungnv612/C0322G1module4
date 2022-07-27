@@ -1,7 +1,6 @@
 package com.example.books.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class User {
@@ -14,12 +13,12 @@ public class User {
     private Book idBook;
 
     private String nameUser;
-    private int codeUser;
+    private Long codeUser;
 
     public User() {
     }
 
-    public User(int idUser, Book idBook, String nameUser, int codeUser) {
+    public User(int idUser, Book idBook, String nameUser, Long codeUser) {
         this.idUser = idUser;
         this.idBook = idBook;
         this.nameUser = nameUser;
@@ -50,11 +49,11 @@ public class User {
         this.nameUser = nameUser;
     }
 
-    public int getCodeUser() {
+    public Long getCodeUser() {
         return codeUser;
     }
 
-    public void setCodeUser(int codeUser) {
+    public void setCodeUser(Long codeUser) {
         this.codeUser = codeUser;
     }
 }

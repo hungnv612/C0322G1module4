@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IUserService {
-    int random( );
+    Long random( );
 
     List<User> findAll();
 
@@ -19,4 +19,6 @@ public interface IUserService {
     void update(User user);
 
     List<User> findByName(String name);
+
+    User findByCodeUser(Long code);
 }
