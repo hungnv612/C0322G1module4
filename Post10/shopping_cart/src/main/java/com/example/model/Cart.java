@@ -56,7 +56,7 @@ public class Cart {
             Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
             Integer integer = itemEntry.getValue() - 1;
             products.replace(itemEntry.getKey(), integer);
-            if (integer == -1){
+            if (integer == -1) {
                 products.replace(itemEntry.getKey(), 0);
                 throw new Exception();
             }
