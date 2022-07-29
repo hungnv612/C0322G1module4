@@ -35,24 +35,22 @@ public class BlogController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Blog> updateBlogger(@PathVariable int id, @RequestBody Blog blog) {
-//        Optional<Blog> blog1 = iBlogService.findById(id);
-//        if (blog1 == null) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//        blog1.(blog.getName());
-//        blog1.setContent(blog.getContent());
-//        blog1.setStatus(blog.getStatus());
-//        blog1.setDayStart(blog.getDayStart());
-//        blog1.setCategory(blog.getCategory());
-//
-//        iBloggerService.edit(blogger1);
-//        return new ResponseEntity<>(blogger1,HttpStatus.OK);
-//    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Blog> updateBlogger(@PathVariable int id, @RequestBody Blog blog) {
+        Optional<Blog> blog1 = iBlogService.findById(id);
+        if (blog1 == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        blog1.get().setNameBlog(blog.getNameBlog());
+        blog1.get().setContent(blog.getContent());
+        blog1.get().setCategory(blog.getCategory());
+        iBlogService.update(blog);
+        return new ResponseEntity<>(blog, HttpStatus.OK);
+    }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteBlogger(@PathVariable int id){
+    public ResponseEntity deleteBlogger(@PathVariable int id) {
         iBlogService.remove(id);
         return new ResponseEntity(HttpStatus.OK);
     }

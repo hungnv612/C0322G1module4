@@ -31,34 +31,34 @@ public class CategoryController {
     @PostMapping("/save")
     public String createCategory(@ModelAttribute Category category, RedirectAttributes redirectAttributes) {
         iCategoryService.create(category);
-        redirectAttributes.addFlashAttribute("mess","Create Category success");
+        redirectAttributes.addFlashAttribute("mess", "Create Category success");
         return "redirect:/category";
     }
 
     @GetMapping("/edit/{id}")
-    public String editForm(@PathVariable int id, Model model){
+    public String editForm(@PathVariable int id, Model model) {
         Category category = iCategoryService.findById(id);
-        model.addAttribute("category",category);
+        model.addAttribute("category", category);
         return "/edit_category";
     }
 
     @PostMapping("/update")
-    public String editCategory(Category category, RedirectAttributes redirectAttributes){
+    public String editCategory(Category category, RedirectAttributes redirectAttributes) {
         iCategoryService.edit(category);
-        redirectAttributes.addFlashAttribute("mess","Update Category success");
+        redirectAttributes.addFlashAttribute("mess", "Update Category success");
         return "redirect:/category";
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam int id, RedirectAttributes redirectAttributes){
+    public String delete(@RequestParam int id, RedirectAttributes redirectAttributes) {
         iCategoryService.delete(id);
-        redirectAttributes.addFlashAttribute("mess","Delete Category success");
+        redirectAttributes.addFlashAttribute("mess", "Delete Category success");
         return "redirect:/category";
     }
 
     @GetMapping("/search")
-    public String search(@PageableDefault(value = 2) Pageable pageable,@RequestParam("search") String name, Model model) {
-        model.addAttribute("category", iCategoryService.search(pageable,name));
+    public String search(@PageableDefault(value = 2) Pageable pageable, @RequestParam("search") String name, Model model) {
+        model.addAttribute("category", iCategoryService.search(pageable, name));
         return "/category";
     }
 

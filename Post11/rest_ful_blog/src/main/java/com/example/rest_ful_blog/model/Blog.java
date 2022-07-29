@@ -1,7 +1,5 @@
 package com.example.rest_ful_blog.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 
 
