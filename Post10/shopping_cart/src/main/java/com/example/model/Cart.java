@@ -48,7 +48,7 @@ public class Cart {
         }
     }
 
-    // thêm sản phẩm vào trong giỏ hàng.
+    // trừ sản phẩm vào trong giỏ hàng.
     public void removeProduct(Product product) throws Exception {
         if (!checkItemInCart(product)) {
             products.put(product, 1);
