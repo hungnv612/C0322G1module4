@@ -19,5 +19,7 @@ public interface IBlogService {
 
     void update(Blog blog);
 
-    Page<Blog> findByName(String name,Pageable pageable);
+    List<Blog> findByName(String name);
+
+
 }
