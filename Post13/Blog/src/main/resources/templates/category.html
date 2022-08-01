@@ -1,0 +1,111 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<center><h1>CATEGORY</h1></center>
+<center>
+    <form th:action="@{/category/search}">
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </form>
+</center>
+<strong th:text="${mess}"></strong>
+<div>
+    <div style="float: left">
+        <a th:href="@{/category/create}">
+            <button>Create</button>
+        </a>
+    </div>
+    <div style="float: left; margin-left: 10%">
+        <a th:href="@{/}">
+            <button>Blogger List</button>
+        </a>
+    </div>
+
+    <div style="margin-left: 150px; float: right">
+        <a th:href="@{/category/(page=${category.number - 1})}" th:if="${category.hasPrevious}">Previous</a>
+        <span th:text="${category.number + 1}"></span>/<span th:text="${category.totalPages}"></span>
+        <a th:href="@{/category(page=${category.number + 1})}" th:if="${category.hasNext}">Previous</a>
+    </div>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${category}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td>
+            <a class="btn btn-primary" style="text-decoration: none" th:href="@{/category/edit/{id}/(id=${item.id})}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-pen-fill"
+                     viewBox="0 0 16 16">
+                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+                </svg>
+                Edit
+            </a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="infoDelete(this.value)" th:value="${item.id}+','+${item.name}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
+                     viewBox="0 0 16 16">
+                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                </svg>
+                Delete
+            </button>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" th:action="@{/category/delete}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete this Song</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- name trung voi serverlet xoa-->
+                    <input type="text" hidden name="id" id="idDelete">
+                    <span>Bạn có muốn xóa: </span>
+                    <span id="nameDelete"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không Xóa</button>
+                    <button type="submit" class="btn btn-primary">Xóa</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script>
+    function infoDelete(name) {
+        let arr = name.split(",")
+        document.getElementById("idDelete").value = arr[0];
+        document.getElementById("nameDelete").innerText = arr[1];
+    }
+</script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</html>
