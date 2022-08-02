@@ -6,7 +6,9 @@
 </head>
 <body>
     <h1>home</h1>
-    <a th:href="@{/login}">Đăng nhập</a>
+
+    <a sec:authorize="!isAuthenticated()" th:href="@{/login}">Đăng Nhập</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/logout}">Đăng Xuất</a>
 
 <div sec:authorize="isAuthenticated()">
     <h2>Đã đăng nhập thành công</h2>
