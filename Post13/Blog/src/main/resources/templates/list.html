@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -15,8 +16,8 @@
     <span style="color: red" th:text="${mess}"></span>
 </div>
 <a th:href="@{/logout}"> Logout</a><br>
-<a th:href="@{category}"> List Category</a><br>
-<a th:href="@{create}">create</a>
+<a th:href="@{category}" sec:authorize="hasRole('ADMIN')"> List Category</a><br>
+<a th:href="@{create}" sec:authorize="hasRole('ADMIN')">create</a>
 <table class="table">
     <thead>
     <tr>
@@ -24,8 +25,8 @@
         <th>Name</th>
         <th>Content</th>
         <th>Category</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th sec:authorize="hasRole('ADMIN')">Edit</th>
+        <th sec:authorize="hasRole('ADMIN')">Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -34,10 +35,10 @@
         <td th:text="${row.nameBlog}"></td>
         <td th:text="${row.content}"></td>
         <td th:text="${row.category.getName()}"></td>
-        <td>
+        <td sec:authorize="hasRole('ADMIN')">
             <a th:href="@{/edit/(id = ${row.id})}"><button class="btn btn-primary" type="button">Edit</button></a>
         </td>
-        <td>
+        <td sec:authorize="hasRole('ADMIN')">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                     onclick="objDelete(this.value)" th:value="${row.id}+','+${row.nameBlog}">
                 Delete

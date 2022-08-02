@@ -23,7 +23,7 @@ public class BlogController {
     private IBlogService iBlogService;
 
 
-    @GetMapping
+    @GetMapping("list")
     public String showPage(Model model, @PageableDefault(value = 3,  sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
         model.addAttribute("blog", iBlogService.findAll(pageable));
         return "list";

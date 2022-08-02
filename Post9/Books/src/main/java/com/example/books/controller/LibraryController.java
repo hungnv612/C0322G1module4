@@ -8,10 +8,7 @@ import com.example.books.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -41,7 +38,7 @@ public class LibraryController {
 
 
     @PostMapping("create")
-    public String createStudent(@ModelAttribute User user, RedirectAttributes redirectAttributes) throws Exception {
+    public String bookCreate(@ModelAttribute User user, RedirectAttributes redirectAttributes) throws Exception {
         Book book = iBookService.findById(user.getIdBook().getIdBook());
         if (book.getAmount() == 0) {
             throw new Exception();
@@ -56,7 +53,7 @@ public class LibraryController {
     }
 
     @GetMapping("pay")
-    public String payBook(@RequestParam("payBook") Long code, RedirectAttributes redirectAttributes) {
+    public String bookPay(@RequestParam("payBook") Long code, RedirectAttributes redirectAttributes) {
         User user = iUserService.findByCodeUser(code);
         if (user == null) {
             redirectAttributes.addFlashAttribute("mess", "Mã sách không tồn tại!");
@@ -68,6 +65,14 @@ public class LibraryController {
         }
 
         return "redirect:";
+    }
+    @ExceptionHandler(Exception.class)
+    public String errorPage() {
+        return "error";
+    }
+    @ExceptionHandler(NullPointerException.class)
+    public String errorPage1() {
+        return "error";
     }
 
 
