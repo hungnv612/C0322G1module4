@@ -1,14 +1,14 @@
-package com.example.casestudy.service;
+package com.example.casestudy.service.Customer;
 
-import com.example.casestudy.model.CustomerType;
-import com.example.casestudy.repository.ICustomerTypeRepository;
+import com.example.casestudy.model.CustomerModel.CustomerType;
+import com.example.casestudy.repository.Customer.ICustomerTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CustomerTypeService implements ICustomerTypeService{
+public class CustomerTypeService implements ICustomerTypeService {
 
     @Autowired
     ICustomerTypeRepository iCustomerTypeRepository;

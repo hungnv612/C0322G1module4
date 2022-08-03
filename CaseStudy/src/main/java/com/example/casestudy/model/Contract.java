@@ -1,5 +1,8 @@
 package com.example.casestudy.model;
 
+import com.example.casestudy.model.CustomerModel.Customer;
+import com.example.casestudy.model.FacilityMode.Facility;
+
 import javax.persistence.*;
 import java.util.Date;
 

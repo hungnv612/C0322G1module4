@@ -1,4 +1,4 @@
-package com.example.casestudy.model;
+package com.example.casestudy.model.FacilityMode;
 
 import javax.persistence.*;
 

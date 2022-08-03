@@ -1,7 +1,7 @@
-package com.example.casestudy.service;
+package com.example.casestudy.service.Customer;
 
-import com.example.casestudy.model.Customer;
-import com.example.casestudy.repository.ICustomerRepository;
+import com.example.casestudy.model.CustomerModel.Customer;
+import com.example.casestudy.repository.Customer.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

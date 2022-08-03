@@ -1,4 +1,6 @@
-package com.example.casestudy.model;
+package com.example.casestudy.model.FacilityMode;
+
+import com.example.casestudy.model.FacilityMode.Facility;
 
 import javax.persistence.*;
 import java.util.Set;
