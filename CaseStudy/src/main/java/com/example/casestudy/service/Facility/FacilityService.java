@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FacilityService implements IFacilityService{
+public class FacilityService implements IFacilityService {
 
     @Autowired
     IFacilityRepository iFacilityRepository;
@@ -21,17 +21,17 @@ public class FacilityService implements IFacilityService{
 
     @Override
     public Optional<Facility> findById(Integer id) {
-        return Optional.empty();
+        return iFacilityRepository.findById(id);
     }
 
     @Override
     public void remove(Integer id) {
-
+        iFacilityRepository.deleteById(id);
     }
 
     @Override
     public void save(Facility facility) {
-
+        iFacilityRepository.save(facility);
     }
 
     @Override
@@ -41,6 +41,6 @@ public class FacilityService implements IFacilityService{
 
     @Override
     public List<Facility> findByName(String name) {
-        return null;
+        return iFacilityRepository.findByFacilityNameContaining(name);
     }
 }

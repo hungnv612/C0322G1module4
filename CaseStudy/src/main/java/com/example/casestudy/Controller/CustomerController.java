@@ -62,7 +62,7 @@ public class CustomerController {
         BeanUtils.copyProperties(customerDTO,customer);
         iCustomerService.save(customer);
         redirectAttributes.addFlashAttribute("mess", "Create student: " + customer.getCustomerName() + " OK!");
-        return "redirect:customer/listCustomer";
+        return "redirect:listCustomer";
     }
 
     @GetMapping("edit")
@@ -76,7 +76,7 @@ public class CustomerController {
     public String edit(@ModelAttribute  Customer customer, RedirectAttributes redirectAttributes) {
         iCustomerService.save(customer);
         redirectAttributes.addFlashAttribute("mess","update thanh cong ");
-        return "redirect:customer/listCustomer";
+        return "redirect:listCustomer";
     }
 
     @GetMapping("search")

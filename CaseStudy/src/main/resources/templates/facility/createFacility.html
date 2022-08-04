@@ -146,67 +146,80 @@
 
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
-        <h1>Create Customer</h1>
-        <form th:object="${customerDto}" method="post">
+        <h1>Create Facility</h1>
+        <form th:object="${facility}" method="post">
             <table class="table">
-                <tr>
-                    <th>customerType</th>
-                    <th>
-                        <select style="width: 20%" class="form-select" th:field="*{customerType}">
-                            <option th:each="item : ${customerType}"
-                                    th:value="${item.customerTypeId}" th:text="${item.customerTypeName}"></option>
-                        </select>
-                    </th>
-                </tr>
                 <tr>
                     <th>Name</th>
                     <th>
-                        <input type="text" th:field="*{customerName}"/>
-                        <span style="font-size: small " class="error text-danger col-6" role="alert" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></span>
+                        <input type="text" th:field="*{facilityName}"/>
                     </th>
                 </tr>
                 <tr>
-                    <th>dayOfBirth</th>
+                    <th>Are</th>
                     <th>
-                        <input type="date" th:field="*{dayOfBirth}"/>
+                        <input type="number" th:field="*{are}"/>
                     </th>
                 </tr>
                 <tr>
-                    <th>gender</th>
+                    <th>Cost</th>
                     <th>
-                        <select style="width: 15%" class="form-select" th:field="*{gender}">
-                            <option th:value="1">Nam</option>
-                            <option th:value="0">Nữ</option>
-                            <option th:value="2">LGBT</option>
+                        <input type="number" th:field="*{cost}"/>
+                    </th>
+                </tr>
+                </tr>
+                <tr>
+                    <th>MaxPeople</th>
+                    <th>
+                        <input type="number" th:field="*{maxPeople}"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>FacilityType</th>
+                    <th>
+                        <select style="width: 30%" class="form-select" th:field="*{facilityTypeId}">
+                            <option th:each="item : ${facilityType}"
+                                    th:value="${item.facilityTypeId}" th:text="${item.facilityTypeName}"></option>
                         </select>
                     </th>
                 </tr>
                 <tr>
-                    <th>customerIdCard</th>
+                    <th>RentType</th>
                     <th>
-                        <input type="text" th:field="*{customerIdCard}"/>
-                    <span style="font-size: small " class="error text-danger col-6" role="alert" th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}"></span>
+                        <select style="width: 30%" class="form-select" th:field="*{rentTypeId}">
+                            <option th:each="item : ${rentType}"
+                                    th:value="${item.rentTypeId}" th:text="${item.rentTypeName}"></option>
+                        </select>
                     </th>
                 </tr>
                 <tr>
-                    <th>phoneNumber</th>
+                    <th>StandardRoom</th>
                     <th>
-                        <input type="text" th:field="*{phoneNumber}"/>
-                    <span style="font-size: small " class="error text-danger col-6" role="alert" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+                        <input type="text" th:field="*{standardRoom}"/>
                     </th>
                 </tr>
                 <tr>
-                    <th>customerEmail</th>
+                    <th>descriptionOtherConvenience</th>
                     <th>
-                        <input type="text" th:field="*{customerEmail}"/>
-                    <span style="font-size: small " class="error text-danger col-6" role="alert" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}">
-                    </span>
+                        <input type="text" th:field="*{descriptionOtherConvenience}"/>
                     </th>
                 </tr>
                 <tr>
-                    <th>address</th>
+                    <th>poolArea</th>
                     <th>
-                        <input type="text" th:field="*{address}"/>
+                        <input type="text" th:field="*{poolArea}"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>numberOffloors</th>
+                    <th>
+                        <input type="number" th:field="*{numberOffloors}"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>facalityFree</th>
+                    <th>
+                        <input type="number" th:field="*{facalityFree}"/>
                     </th>
                 </tr>
                 <tr>

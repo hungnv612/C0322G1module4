@@ -33,7 +33,7 @@ public class BlogController {
     public String delete(@RequestParam int id, RedirectAttributes redirectAttributes) {
         iBlogService.remove(id);
         redirectAttributes.addFlashAttribute("mess", "xoa thanh cong");
-        return "redirect:";
+        return "redirect:/list";
     }
 
     @GetMapping("create")
@@ -46,7 +46,7 @@ public class BlogController {
     public String createStudent(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes) {
         iBlogService.save(blog);
         redirectAttributes.addFlashAttribute("mess", "Create student: " + blog.getNameBlog() + " OK!");
-        return "redirect:";
+        return "redirect:/list";
     }
 
     @GetMapping("edit")
@@ -58,7 +58,7 @@ public class BlogController {
     public String edit(Blog blog, RedirectAttributes redirectAttributes) {
         iBlogService.update(blog);
         redirectAttributes.addFlashAttribute("mess","update thanh cong ");
-        return "redirect:";
+        return "redirect:/list";
     }
     @GetMapping("search")
     public String search(@RequestParam String keyword, Model model,Pageable pageable){
