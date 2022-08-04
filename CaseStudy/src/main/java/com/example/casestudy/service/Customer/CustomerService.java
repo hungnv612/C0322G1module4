@@ -3,6 +3,8 @@ package com.example.casestudy.service.Customer;
 import com.example.casestudy.model.CustomerModel.Customer;
 import com.example.casestudy.repository.Customer.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +16,10 @@ public class CustomerService implements ICustomerService {
     @Autowired
     ICustomerRepository iCustomerRepository;
 
+
     @Override
-    public List<Customer> findAll() {
-        return iCustomerRepository.findAll();
+    public Page<Customer> findAll(Pageable pageable) {
+        return iCustomerRepository.findAll(pageable);
     }
 
     @Override
@@ -40,8 +43,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public List<Customer> findByName(String name) {
-        return iCustomerRepository.findByCustomerNameContaining(name);
+    public Page<Customer> findByName(String name, Pageable pageable) {
+        return iCustomerRepository.findByCustomerNameContaining(name,pageable);
     }
 
 

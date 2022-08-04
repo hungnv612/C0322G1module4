@@ -1,12 +1,14 @@
 package com.example.casestudy.service.Customer;
 
 import com.example.casestudy.model.CustomerModel.Customer;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ICustomerService {
-    List<Customer> findAll();
+    Page<Customer> findAll(Pageable pageable);
 
     Optional<Customer> findById(Integer id);
 
@@ -16,5 +18,5 @@ public interface ICustomerService {
 
     void update(Customer blog);
 
-    List<Customer> findByName(String name);
+    Page<Customer> findByName(String name,Pageable pageable);
 }

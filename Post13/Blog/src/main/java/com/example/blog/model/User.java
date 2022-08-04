@@ -25,6 +25,14 @@ public class User {
     public User() {
     }
 
+    public User(long id, String username, String password, boolean isEnabled, List<Role> roles) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.isEnabled = isEnabled;
+        this.roles = roles;
+    }
+
     public long getId() {
         return id;
     }

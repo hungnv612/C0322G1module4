@@ -199,6 +199,12 @@
             </tr>
             </tbody>
         </table>
+        <div>
+            <a th:href="@{''(page=${facility.number -1})}" th:if="${facility.hasPrevious()}" class="btn btn-outline-primary">Previous</a>
+            <span th:text="${facility.number + 1}"></span>/
+            <span th:text="${facility.totalPages}"></span>
+            <a th:href="@{''(page = ${facility.number + 1})}" th:if="${facility.hasNext()}" class="btn btn-outline-primary">Next</a>
+        </div>
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
     </div>

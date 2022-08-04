@@ -1,4 +1,6 @@
-package com.example.casestudy.model;
+package com.example.casestudy.model.decentralization;
+
+import com.example.casestudy.model.Employee;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -6,13 +8,14 @@ import java.util.Set;
 @Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String userName;
     private String password;
 
     @OneToMany(mappedBy = "userName", cascade = CascadeType.ALL)
     private Set<Employee> employees;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "users",fetch = FetchType.EAGER)
     private Set<Role> roles;
 
     public User() {

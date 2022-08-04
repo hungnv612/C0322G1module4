@@ -2,12 +2,14 @@ package com.example.casestudy.service.Facility;
 
 import com.example.casestudy.model.CustomerModel.Customer;
 import com.example.casestudy.model.FacilityMode.Facility;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IFacilityService {
-    List<Facility> findAll();
+    Page<Facility> findAll(Pageable pageable);
 
     Optional<Facility> findById(Integer id);
 
@@ -17,5 +19,5 @@ public interface IFacilityService {
 
     void update(Facility facility);
 
-    List<Facility> findByName(String name);
+    Page<Facility> findByName(String name, Pageable pageable);
 }

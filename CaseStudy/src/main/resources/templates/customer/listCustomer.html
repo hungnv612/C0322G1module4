@@ -200,6 +200,12 @@
             </tr>
             </tbody>
         </table>
+        <div>
+            <a th:href="@{''(page=${customer.number -1})}" th:if="${customer.hasPrevious()}" class="btn btn-outline-primary">Previous</a>
+            <span th:text="${customer.number + 1}"></span>/
+            <span th:text="${customer.totalPages}"></span>
+            <a th:href="@{''(page = ${customer.number + 1})}" th:if="${customer.hasNext()}" class="btn btn-outline-primary">Next</a>
+        </div>
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
         <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
     </div>

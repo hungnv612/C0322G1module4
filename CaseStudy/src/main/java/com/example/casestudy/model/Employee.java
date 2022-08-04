@@ -1,5 +1,7 @@
 package com.example.casestudy.model;
 
+import com.example.casestudy.model.decentralization.User;
+
 import javax.persistence.*;
 
 @Entity

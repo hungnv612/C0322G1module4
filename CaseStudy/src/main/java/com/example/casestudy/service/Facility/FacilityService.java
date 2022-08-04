@@ -3,6 +3,8 @@ package com.example.casestudy.service.Facility;
 import com.example.casestudy.model.FacilityMode.Facility;
 import com.example.casestudy.repository.Facility.IFacilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +16,10 @@ public class FacilityService implements IFacilityService {
     @Autowired
     IFacilityRepository iFacilityRepository;
 
+
     @Override
-    public List<Facility> findAll() {
-        return iFacilityRepository.findAll();
+    public Page<Facility> findAll(Pageable pageable) {
+        return iFacilityRepository.findAll(pageable);
     }
 
     @Override
@@ -40,7 +43,9 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
-    public List<Facility> findByName(String name) {
-        return iFacilityRepository.findByFacilityNameContaining(name);
+    public Page<Facility> findByName(String name, Pageable pageable) {
+        return iFacilityRepository.findByFacilityNameContaining(name,pageable);
     }
+
+
 }
