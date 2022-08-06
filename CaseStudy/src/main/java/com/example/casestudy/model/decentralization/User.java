@@ -1,6 +1,6 @@
 package com.example.casestudy.model.decentralization;
 
-import com.example.casestudy.model.Employee;
+import com.example.casestudy.model.employeeModel.Employee;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String userName;
     private String password;
 

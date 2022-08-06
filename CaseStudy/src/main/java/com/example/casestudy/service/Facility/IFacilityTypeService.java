@@ -1,6 +1,6 @@
 package com.example.casestudy.service.Facility;
 
-import com.example.casestudy.model.FacilityMode.FacilityType;
+import com.example.casestudy.model.FacilityModel.FacilityType;
 
 import java.util.List;
 

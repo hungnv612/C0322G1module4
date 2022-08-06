@@ -1,7 +1,7 @@
 package com.example.casestudy.Controller;
 
 
-import com.example.casestudy.model.FacilityMode.Facility;
+import com.example.casestudy.model.FacilityModel.Facility;
 import com.example.casestudy.service.Facility.IFacilityService;
 import com.example.casestudy.service.Facility.IFacilityTypeService;
 import com.example.casestudy.service.Facility.IRentTypeService;

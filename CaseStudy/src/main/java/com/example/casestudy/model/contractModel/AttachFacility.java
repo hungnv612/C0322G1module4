@@ -1,4 +1,4 @@
-package com.example.casestudy.model;
+package com.example.casestudy.model.contractModel;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

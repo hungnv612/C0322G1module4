@@ -1,7 +1,7 @@
 package com.example.casestudy.service.Facility;
 
 
-import com.example.casestudy.model.FacilityMode.FacilityType;
+import com.example.casestudy.model.FacilityModel.FacilityType;
 import com.example.casestudy.repository.Facility.IFacilityTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

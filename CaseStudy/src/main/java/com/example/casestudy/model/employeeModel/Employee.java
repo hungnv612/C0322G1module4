@@ -1,4 +1,4 @@
-package com.example.casestudy.model;
+package com.example.casestudy.model.employeeModel;
 
 import com.example.casestudy.model.decentralization.User;
 
@@ -30,7 +30,7 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name="educationDegreeId", referencedColumnName = "educationDegreeId")
-    private  EducationDegree educationDegree;
+    private EducationDegree educationDegree;
 
     @ManyToOne
     @JoinColumn(name="divisionId",referencedColumnName = "divisionId")
